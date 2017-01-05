@@ -70,7 +70,10 @@ alias lr='ll -R'          # human-readable sizes, recursive
 alias lx='ll -XB'         # human-readable sizes, sort by extension (GNU only)
 alias lk='ll -Sr'         # human-readable sizes, largest last
 alias lt='ll -tr'         # human-readable sizes, most recent last
-alias lc='lt -c'          # human-readable sizes, most recent last, change time
+alias la='ll -A'         # Lists human readable sizes, hidden files.
+alias lm='la | "$PAGER"' # Lists human readable sizes, hidden files through pager.
+alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
+alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
 
 
 #
@@ -120,4 +123,3 @@ fi
 mkcd() {
   [[ -n ${1} ]] && mkdir -p ${1} && builtin cd ${1}
 }
-
