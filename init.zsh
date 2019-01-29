@@ -8,7 +8,7 @@
 
 if (( ${terminfo[colors]} >= 8 )); then
   # ls Colors
-  if (( ${+commands[dircolors]} )); then
+  if ls --version 2>/dev/null | grep -q 'coreutils'; then
     # GNU
     if [[ -s ${HOME}/.dir_colors ]]; then
       eval "$(dircolors --sh ${HOME}/.dir_colors)"
